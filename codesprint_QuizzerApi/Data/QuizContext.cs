@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -37,7 +39,7 @@ namespace Data
             modelBuilder.Entity<Answer>()
                 .HasIndex(a => new { a.AnswerText, a.QuestionId })
                 .IsUnique();
-            
+
             modelBuilder.Entity<Category>()
                 .HasIndex(c => c.Name)
                 .IsUnique();

@@ -11,6 +11,8 @@ import { AboutComponent } from './components/about/about.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {AuthenticationService} from "./services/auth/authentication.service";
+import { ManageQuizComponent } from './components/quiz/manage-quiz/manage-quiz.component';
+import { StartQuizComponent } from './components/quiz/start-quiz/start-quiz.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {AuthenticationService} from "./services/auth/authentication.service";
     HeaderComponent,
     AddQuizComponent,
     ViewQuizComponent,
-    AboutComponent
+    AboutComponent,
+    ManageQuizComponent,
+    StartQuizComponent,
   ],
   imports: [
     BrowserModule,

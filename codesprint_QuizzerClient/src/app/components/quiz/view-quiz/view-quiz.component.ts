@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {QuizApiService} from "../../../services/quiz/quiz-api.service";
+import {IQuiz, Quiz} from "../../../dto/Quiz.model";
 
 @Component({
   selector: 'app-view-quiz',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-quiz.component.css']
 })
 export class ViewQuizComponent implements OnInit {
+  quizzes: IQuiz[] = [];
+  value: string = "";
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(public api: QuizApiService) {
   }
 
+  ngOnInit(): void {
+    this.api.getQuizzes()
+      .subscribe(quizzes => this.quizzes = quizzes);
+  }
 }

@@ -1,0 +1,56 @@
+<div class="jumbotron display-5 mb-3">{{ quiz.title }}</div>
+<hr>
+
+<form [formGroup]="manageQuizForm">
+  <div class="mb-3 mt-4">
+    <label for="questionType" class="col-form-label fw-bolder">Question Type</label>
+    <select class="form-select shadow-none" formControlName="questionType">
+      <option value=0>Single Answer</option>
+      <option value=1>Multiple Choice</option>
+    </select>
+  </div>
+
+  <div class="mb-3 mt-4">
+    <label for="question" class="col-form-label fw-bolder">Question&nbsp;<span class="text-danger">*</span></label>
+    <textarea class="form-control shadow-none" type="text" formControlName="question"
+              [class.invalid]="QuestionType.invalid && QuestionType.dirty" rows="7" style="resize: none" ></textarea>
+  </div>
+
+  <div class="mb-3 mt-4">
+    <label for="category" class="form-label">Category</label>
+    <input [class.invalid]="Category.invalid && Category.dirty" class="form-control shadow-none"
+           list="categories" id="categories" placeholder="Type to search...">
+    <datalist [class.invalid]="Category.invalid && Category.dirty" id="categoriesDatalist" *ngFor="let category of categories">
+      <option [value]="[category.name]">
+    </datalist>
+  </div>
+
+  <fieldset>
+    <div class="row">
+      <div class="col-md-1">
+          <label for="tag" class="col-form-label fw-bolder me-3">Tag</label>
+          <input class="form-control shadow-none" type="text" formControlName="tag"
+                 [class.invalid]="Tag.invalid && Tag.dirty" />
+      </div>
+
+      <div class="col-md-1">
+          <label for="score" class="col-form-label fw-bolder me-3">Score</label>
+          <input class="form-control shadow-none" type="text" formControlName="score"
+                 [class.invalid]="Score.invalid && Score.dirty" />
+      </div>
+
+      <div class="col-md-1 mt-2">
+        <label for="isCorrect" class="col-form-check-label fw-bolder me-3">Correct?</label>
+        <input class="form-check-input shadow-none" style="cursor: pointer;" [type]="QuestionType.value === 0 ? 'radio' : 'checkbox'" formControlName="isCorrect"
+               [class.invalid]="IsCorrect.invalid && IsCorrect.dirty" />
+      </div>
+
+      <div class="col-md-9">
+          <label for="answerText" class="col-form-label fw-bolder">Option&nbsp;<span class="text-danger">*</span></label>
+          <textarea class="form-control shadow-none" type="text" formControlName="answerText"
+                    [class.invalid]="AnswerText.invalid && AnswerText.dirty" rows="7" style="resize: none" ></textarea>
+      </div>
+    </div>
+  </fieldset>
+
+</form>

@@ -7657,15 +7657,9 @@
       "packagesPath": "/Users/fabianmuscat/.nuget/packages/",
       "outputPath": "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/obj/",
       "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "/Users/fabianmuscat/.nuget/NuGet/NuGet.Config"
-      ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
-      "sources": {
-        "https://api.nuget.org/v3/index.json": {}
-      },
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {

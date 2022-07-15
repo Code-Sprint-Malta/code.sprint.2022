@@ -1,1 +1,20 @@
-<p>view-quiz works!</p>
+<div class="jumbotron display-5 mb-3">Quizzes</div>
+<hr>
+  <div class="d-flex justify-content-between" *ngFor="let quiz of quizzes; let quizNumber = index">
+    <div>
+      <a [routerLink]=[quiz.slug] routerLinkActive="router-link-active"
+         class="text-dark fs-5 quiz-title" style="text-decoration: none">{{ quizNumber + 1 }}&period; {{ quiz.title }}</a>
+    </div>
+
+    <div>
+      <a [routerLink]="['manage/', quiz.slug]" routerLinkActive="router-link-active" class="btn text-primary shadow-none">
+        <i class="bi bi-pencil"></i>
+      </a>
+      <div class="vr"></div>
+      <a class="btn text-danger shadow-none">
+        <i class="bi bi-trash"></i>
+      </a>
+    </div>
+  </div>
+
+

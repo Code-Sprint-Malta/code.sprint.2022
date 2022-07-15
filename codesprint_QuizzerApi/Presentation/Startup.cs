@@ -1,19 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Application.Interfaces;
+using Application.Services;
 using Data;
+using Data.Repositories;
+using Domain.Interfaces;
 using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
 namespace Presentation
@@ -40,11 +37,11 @@ namespace Presentation
 
             services.AddDbContext<QuizContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            
+
             services.AddDefaultIdentity<IdentityUser>()
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<QuizContext>();
-            
+
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = GoogleDefaults.AuthenticationScheme;
@@ -54,6 +51,10 @@ namespace Presentation
                 options.ClientId = Configuration["Authentication:Google:ClientId"];
                 options.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
             });
+
+            services.AddScoped<IAuthenticationRepository, AuthenticationRepository>();
+            services.AddScoped<IQuizService, QuizService>();
+            services.AddScoped<IQuizRepository, QuizRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

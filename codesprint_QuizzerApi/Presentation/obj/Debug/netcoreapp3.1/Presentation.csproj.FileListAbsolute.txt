@@ -153,3 +153,5 @@
 /Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Presentation/obj/Debug/netcoreapp3.1/Presentation.pdb
 /Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Presentation/obj/Debug/netcoreapp3.1/Presentation.genruntimeconfig.cache
 /Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Presentation/bin/Debug/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Presentation/bin/Debug/netcoreapp3.1/Castle.Core.dll
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Presentation/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Proxies.dll

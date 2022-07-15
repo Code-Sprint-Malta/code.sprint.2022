@@ -4,7 +4,11 @@
   background-color: #1d58af !important;
 }
 
-input.invalid {
+.text-primary {
+  color: #1d58af !important;
+}
+
+input.invalid, textarea.invalid, datalist.invalid {
   border-color: #e50a0a;
 }
 

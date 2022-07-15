@@ -13,6 +13,9 @@ namespace Domain.Models
         public string AnswerText { get; set; }
 
         [Required]
+        public string Tag { get; set; }
+
+        [Required]
         public bool IsCorrect { get; set; }
         
         [Required] 
@@ -23,5 +26,11 @@ namespace Domain.Models
         public int QuestionId { get; set; }
 
         public virtual Question Question { get; set; }
+        
+        [Required]
+        [ForeignKey("Quiz")]
+        public int QuizId { get; set; }
+
+        public virtual Quiz Quiz { get; set; }
     }
 }
