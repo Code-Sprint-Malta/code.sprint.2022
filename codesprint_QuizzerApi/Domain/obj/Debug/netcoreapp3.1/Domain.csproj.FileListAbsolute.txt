@@ -1,0 +1,9 @@
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Domain/bin/Debug/netcoreapp3.1/Domain.deps.json
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Domain/bin/Debug/netcoreapp3.1/Domain.dll
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Domain/bin/Debug/netcoreapp3.1/Domain.pdb
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Domain/obj/Debug/netcoreapp3.1/Domain.csprojAssemblyReference.cache
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Domain/obj/Debug/netcoreapp3.1/Domain.AssemblyInfoInputs.cache
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Domain/obj/Debug/netcoreapp3.1/Domain.AssemblyInfo.cs
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Domain/obj/Debug/netcoreapp3.1/Domain.csproj.CoreCompileInputs.cache
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Domain/obj/Debug/netcoreapp3.1/Domain.dll
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Domain/obj/Debug/netcoreapp3.1/Domain.pdb

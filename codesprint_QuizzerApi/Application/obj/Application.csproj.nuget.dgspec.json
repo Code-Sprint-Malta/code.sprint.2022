@@ -1,0 +1,186 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/Application.csproj": {}
+  },
+  "projects": {
+    "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/Application.csproj",
+        "projectName": "Application",
+        "projectPath": "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/Application.csproj",
+        "packagesPath": "/Users/fabianmuscat/.nuget/packages/",
+        "outputPath": "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/fabianmuscat/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/Data.csproj": {
+                "projectPath": "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.414/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/Data.csproj",
+        "projectName": "Data",
+        "projectPath": "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/Data.csproj",
+        "packagesPath": "/Users/fabianmuscat/.nuget/packages/",
+        "outputPath": "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/fabianmuscat/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Domain/Domain.csproj": {
+                "projectPath": "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Domain/Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.20, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[3.1.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.20, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.414/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Domain/Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Domain/Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Domain/Domain.csproj",
+        "packagesPath": "/Users/fabianmuscat/.nuget/packages/",
+        "outputPath": "/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/fabianmuscat/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.414/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/bin/Debug/netcoreapp3.1/Data.deps.json
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/bin/Debug/netcoreapp3.1/Data.dll
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/bin/Debug/netcoreapp3.1/Data.pdb
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/bin/Debug/netcoreapp3.1/Domain.dll
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/bin/Debug/netcoreapp3.1/Domain.pdb
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/obj/Debug/netcoreapp3.1/Data.csprojAssemblyReference.cache
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/obj/Debug/netcoreapp3.1/Data.AssemblyInfoInputs.cache
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/obj/Debug/netcoreapp3.1/Data.AssemblyInfo.cs
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/obj/Debug/netcoreapp3.1/Data.csproj.CoreCompileInputs.cache
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/obj/Debug/netcoreapp3.1/Data.csproj.CopyComplete
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/obj/Debug/netcoreapp3.1/Data.dll
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Data/obj/Debug/netcoreapp3.1/Data.pdb

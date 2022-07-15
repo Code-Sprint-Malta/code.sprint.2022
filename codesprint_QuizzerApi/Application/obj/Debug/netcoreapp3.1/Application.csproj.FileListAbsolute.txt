@@ -1,0 +1,14 @@
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/bin/Debug/netcoreapp3.1/Application.deps.json
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/bin/Debug/netcoreapp3.1/Application.dll
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/bin/Debug/netcoreapp3.1/Application.pdb
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/bin/Debug/netcoreapp3.1/Data.dll
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/bin/Debug/netcoreapp3.1/Domain.dll
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/bin/Debug/netcoreapp3.1/Data.pdb
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/bin/Debug/netcoreapp3.1/Domain.pdb
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/obj/Debug/netcoreapp3.1/Application.csprojAssemblyReference.cache
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/obj/Debug/netcoreapp3.1/Application.AssemblyInfoInputs.cache
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/obj/Debug/netcoreapp3.1/Application.AssemblyInfo.cs
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/obj/Debug/netcoreapp3.1/Application.csproj.CoreCompileInputs.cache
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/obj/Debug/netcoreapp3.1/Application.csproj.CopyComplete
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/obj/Debug/netcoreapp3.1/Application.dll
+/Users/fabianmuscat/Library/CloudStorage/OneDrive-MaltaCollegeofArts,Science&Technology/Projects/code.sprint/codesprint_QuizzerApi/Application/obj/Debug/netcoreapp3.1/Application.pdb
