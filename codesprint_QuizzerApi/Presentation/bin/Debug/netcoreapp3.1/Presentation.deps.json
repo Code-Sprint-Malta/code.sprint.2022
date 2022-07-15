@@ -25,6 +25,7 @@
       "Presentation/1.0.0": {
         "dependencies": {
           "Application": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.Google": "3.1.20",
           "Microsoft.AspNetCore.Cors": "2.2.0",
           "Microsoft.EntityFrameworkCore.Design": "3.1.20",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.2",
@@ -299,6 +300,17 @@
         },
         "compile": {
           "Presentation.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Google/3.1.20": {
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "assemblyVersion": "3.1.20.0",
+            "fileVersion": "3.100.2021.47242"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authentication.Google.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cors/2.2.0": {
@@ -4010,6 +4022,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.AspNetCore.Authentication.Google/3.1.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V4t6QtL86dQQNnuMbluRejJMTLUe5+vYTW4zgd7jAAynzdOMoJV/n/GMRTB+8pdTaQw3b50uBmNR5ENXHLzc1g==",
+      "path": "microsoft.aspnetcore.authentication.google/3.1.20",
+      "hashPath": "microsoft.aspnetcore.authentication.google.3.1.20.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cors/2.2.0": {
       "type": "package",

@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+.bg-primary {
+  background-color: #1d58af !important;
+}
+
+input.invalid {
+  border-color: #e50a0a;
+}
+
+label.invalid {
+  color: #e50a0a;
+}

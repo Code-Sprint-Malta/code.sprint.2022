@@ -1,0 +1,63 @@
+<form [formGroup]="addQuizForm" (ngSubmit)="submitQuiz()" novalidate>
+
+  <div class="row">
+    <div class="col-md-6 mb-3 mt-4">
+      <label for="title" class="col-form-label fw-bolder">Title&nbsp;<span class="text-danger">*</span></label>
+      <input class="form-control shadow-none" placeholder="Quiz Title (The Solar Sytem)" type="text" formControlName="title"
+             [class.invalid]="Title.invalid && Title.dirty" minlength="1" maxlength="255" />
+      <small class="text-danger" *ngIf="Title.errors?.maxlength">Maximum characters is 255</small>
+    </div>
+
+    <div class="col-md-6 mb-3 mt-4">
+      <label for="slug" class="col-form-label fw-bolder">Slug&nbsp;<span class="text-danger">*</span></label>
+      <input class="form-control shadow-none" placeholder="Quiz Title (thesolarsystem)" type="text" formControlName="slug"
+             [class.invalid]="Slug.invalid && Slug.dirty" minlength="1" maxlength="255" />
+      <small class="text-danger" *ngIf="Slug.errors?.pattern">Slug must be all <strong>lowercase</strong> and cannot have <strong>whitespaces</strong>.</small>
+    </div>
+  </div>
+
+  <div class="mb-3 mt-4">
+    <label for="description" class="col-form-label fw-bolder">Description&nbsp;<span class="text-danger">*</span></label>
+    <textarea class="form-control shadow-none" type="text" formControlName="description"
+              [class.invalid]="Description.invalid && Description.dirty" rows="10" style="resize: none" ></textarea>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 mb-3 mt-4">
+      <label for="passingScore" class="col-form-label fw-bolder">Passing Score&nbsp;<span class="text-danger">*</span></label>
+      <input class="form-control shadow-none" placeholder="100" type="number" formControlName="passingScore"
+             [class.invalid]="PassingScore.invalid && PassingScore.dirty" minlength="3" maxlength="3" min="0" max="100" />
+      <small class="text-danger" *ngIf="PassingScore.errors?.pattern">Score must be between 0 and 100</small>
+    </div>
+
+    <div class="col-md-6 mb-3 mt-4">
+      <label for="showCorrectAnswers" class="col-form-label fw-bolder">Show Correct Answers</label>
+      <select class="form-select shadow-none">
+        <option selected value="0">Never</option>
+        <option value="1">At the end of the quiz</option>
+        <option value="2">After each question</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="mb-3 mt-4">
+    <label for="validThrough" class="form-check-label fw-bolder me-3">Randomise Question Order</label>
+    <input class="form-check-input shadow-none" style="cursor: pointer;" placeholder="mm/yy" type="checkbox" formControlName="randomiseQuestionOrder"
+           [class.invalid]="RandomiseQuestionOrder.invalid && RandomiseQuestionOrder.dirty" />
+  </div>
+
+  <div class="mb-3 mt-4">
+    <label for="validThrough" class="col-form-label fw-bolder">Message on Pass&nbsp;<span class="text-danger">*</span></label>
+    <textarea class="form-control shadow-none" type="text" formControlName="messageOnPass"
+           [class.invalid]="MessageOnPass.invalid && MessageOnPass.dirty"></textarea>
+  </div>
+
+  <div class="mb-3 mt-4">
+    <label for="validThrough" class="col-form-label fw-bolder">Message on Fail&nbsp;<span class="text-danger">*</span></label>
+    <input class="form-control shadow-none" type="text" formControlName="messageOnFail"
+           [class.invalid]="MessageOnFail.invalid && MessageOnFail.dirty" />
+  </div>
+
+
+  <button class="btn btn-primary" type="submit" [disabled]="addQuizForm.invalid">Submit</button>
+</form>
