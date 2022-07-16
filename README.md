@@ -5,7 +5,9 @@ Node version: 14.18.0
 Angular CLI version: 13.1.3
 ASP.NET Core version: 3.1.414
 
-Server-Side Application (ASP.NET)
+<hr>
+
+## Server-Side Application (ASP.NET)
 
 <a href="https://docs.microsoft.com/en-us/ef/core/cli/powershell">EF Core tools reference</a>
 
@@ -13,9 +15,9 @@ Server-Side Application (ASP.NET)
 2. Write Update-Database
 3. Run the Presentation Projext
 
-# Connection String is in the appsettings.json file in the presentation project.
+Connection String is in the appsettings.json file in the presentation project.
 
-Client Application (Angular)
+## Client Application (Angular)
 
 1. In the terminal write <strong>npm install</strong> to install the required packages for the app.
 2. Once the previous command finishes executing, write <strong>ng serve --install</strong>
