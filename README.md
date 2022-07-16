@@ -1,9 +1,9 @@
 # code.sprint
 code.sprint 2022 competition
 
-Node version: 14.18.0
-Angular CLI version: 13.1.3
-ASP.NET Core version: 3.1.414
+Node version: 14.18.0 <br>
+Angular CLI version: 13.1.3 <br>
+ASP.NET Core version: 3.1.414 <br>
 
 <hr>
 
