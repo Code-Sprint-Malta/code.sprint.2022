@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Application.Interfaces;
 using Application.ViewModels;
@@ -17,40 +16,7 @@ namespace Application.Services
             _repository = repository;
         }
 
-        public async Task<bool> AddQuiz(QuizViewModel quiz)
-        {
-            return await _repository.AddQuiz(new Quiz
-            {
-                Title = quiz.Title.Trim(),
-                Slug = quiz.Slug.Trim().ToLower().Replace(" ", ""),
-                Description = quiz.Description.Trim(),
-                PassingScore = quiz.PassingScore,
-                ShowCorrectAnswer = quiz.ShowCorrectAnswer,
-                RandomiseQuestionOrder = quiz.RandomiseQuestionOrder,
-                MessageOnPass = quiz.MessageOnPass,
-                MessageOnFail = quiz.MessageOnFail
-            });
-        }
-
-        public async Task<bool> AddQuestionsToQuiz(string slug, Dictionary<QuestionViewModel, AnswerViewModel> questions)
-        {
-            var questionsToPost = questions.ToDictionary(question => 
-                new Question
-                {
-                    QuestionText = question.Key.QuestionText, 
-                    QuestionTypeId = _repository.GetQuestionTypeId(question.Key.QuestionType).Result, 
-                    QuizId = _repository.GetQuiz(slug).Result.QuizId,
-                }, question => 
-                new Answer
-                {
-                    AnswerText = question.Value.AnswerText,
-                    IsCorrect = question.Value.IsCorrect,
-                    Tag = question.Value.Tag,
-                    QuestionId = _repository.GetQuestionIdForAnswer(question.Value.AnswerText, slug).Result
-                });
-
-            return await _repository.AddQuestionsToQuiz(slug, questionsToPost);
-        }
+        #region GET
 
         public async Task<QuizViewModel> GetQuiz(string slug)
         {
@@ -69,18 +35,26 @@ namespace Application.Services
             };
         }
 
-        public async Task<QuestionViewModel> GetQuestion(int questionId)
+        public List<QuizViewModel> GetQuizzes()
         {
-            var question = await _repository.GetQuestion(questionId);
-            if (question == null) return new QuestionViewModel();
-
-            return new QuestionViewModel
+            var quizzes = _repository.GetQuizzes();
+            if (quizzes == null) return new List<QuizViewModel>();
+            
+            var toReturn = new List<QuizViewModel>();
+            quizzes.ForEach(quiz => toReturn.Add(new QuizViewModel
             {
-                QuestionText = question.QuestionText,
-                Category = question.Category.Name
-            };
-        }
+                Title = quiz.Title,
+                Slug = quiz.Slug,
+                Description = quiz.Description,
+                PassingScore = quiz.PassingScore,
+                MessageOnPass = quiz.MessageOnPass,
+                MessageOnFail = quiz.MessageOnFail,
+                RandomiseQuestionOrder = quiz.RandomiseQuestionOrder
+            }));
 
+            return toReturn;
+        }
+        
         public List<QuestionViewModel> GetQuestionsForQuiz(string slug)
         {
             var questions =  _repository.GetQuestionsForQuiz(slug);
@@ -91,15 +65,16 @@ namespace Application.Services
             {
                 QuestionText = q.QuestionText,
                 Category = q.Category.Name,
-                QuestionType = q.Type.Type
+                QuestionType = q.Type.Type,
+                Answers = GetAnswersForQuestion(slug, q.QuestionText)
             }));
 
             return toReturn;
         }
 
-        public List<AnswerViewModel> GetAnswersForQuestion(int questionId)
+        private List<AnswerViewModel> GetAnswersForQuestion(string slug, string questionText)
         {
-            var answers = _repository.GetAnswersForQuestion(questionId);
+            var answers = _repository.GetAnswersForQuestion(slug, questionText);
             if (answers == null) return new List<AnswerViewModel>();
             
             var toReturn = new List<AnswerViewModel>();
@@ -107,6 +82,7 @@ namespace Application.Services
             {
                 AnswerText = a.AnswerText,
                 IsCorrect = a.IsCorrect,
+                Tag = a.Tag,
                 Score = a.Score
             }));
 
@@ -127,24 +103,68 @@ namespace Application.Services
             return toReturn;
         }
 
-        public List<QuizViewModel> GetQuizzes()
-        {
-            var quizzes = _repository.GetQuizzes();
-            if (quizzes == null) return new List<QuizViewModel>();
-            
-            var toReturn = new List<QuizViewModel>();
-            quizzes.ForEach(quiz => toReturn.Add(new QuizViewModel()
-            {
-                Title = quiz.Title,
-                Slug = quiz.Slug,
-                Description = quiz.Description,
-                PassingScore = quiz.PassingScore,
-                MessageOnPass = quiz.MessageOnPass,
-                MessageOnFail = quiz.MessageOnFail,
-                RandomiseQuestionOrder = quiz.RandomiseQuestionOrder
-            }));
+        #endregion
 
-            return toReturn;
+        #region POST
+
+        public async Task<bool> AddQuiz(QuizViewModel quiz)
+        {
+            return await _repository.AddQuiz(new Quiz
+            {
+                Title = quiz.Title.Trim(),
+                Slug = quiz.Slug.Trim().ToLower().Replace(" ", ""),
+                Description = quiz.Description.Trim(),
+                PassingScore = quiz.PassingScore,
+                ShowCorrectAnswer = quiz.ShowCorrectAnswer,
+                RandomiseQuestionOrder = quiz.RandomiseQuestionOrder,
+                MessageOnPass = quiz.MessageOnPass,
+                MessageOnFail = quiz.MessageOnFail
+            });
         }
+
+        public async Task<bool> AddQuestionToQuiz(string slug, QuestionViewModel question)
+        {
+            
+            var questionToPost = new Question
+            {
+                QuestionText = question.QuestionText,
+                QuestionTypeId = _repository.GetQuestionTypeId(question.QuestionType).Result,
+                QuizId = _repository.GetQuiz(slug).Result.QuizId,
+                CategoryId = _repository.GetCategoryId(question.Category).Result
+            };
+
+            var questionId = await _repository.AddQuestionToQuiz(slug, questionToPost);
+            if (questionId == -1) return false;
+            
+            var answersToPost = new List<Answer>();
+            question.Answers.ForEach(answer =>
+            {
+                answersToPost.Add(new Answer
+                {
+                    AnswerText = answer.AnswerText,
+                    IsCorrect = answer.IsCorrect,
+                    Score = answer.Score,
+                    Tag = answer.Tag,
+                    QuestionId = questionId,
+                    QuizId = _repository.GetQuiz(slug).Result.QuizId
+                });
+            });
+
+            return await _repository.AddAnswersToQuiz(answersToPost);
+        }
+
+        #endregion
+
+        #region DELETE
+
+        public async Task<bool> DeleteQuiz(string slug)
+        {
+            var quiz = await _repository.GetQuiz(slug);
+            if (quiz == null) return false;
+
+            return await _repository.DeleteQuiz(quiz.QuizId);
+        }
+
+        #endregion
     }
 }

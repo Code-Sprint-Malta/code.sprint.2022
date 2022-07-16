@@ -2,55 +2,81 @@
 <hr>
 
 <form [formGroup]="manageQuizForm">
+  <div class="alert alert-secondary">
+    <button type="submit" class="btn btn-primary" (click)="submitQuestions()"
+            [disabled]="manageQuizForm.invalid">Save</button>
+    <button class="btn btn-light border ms-2" type="button" (click)="resetManageQuizForm()">Cancel</button>
+  </div>
+
   <div class="mb-3 mt-4">
     <label for="questionType" class="col-form-label fw-bolder">Question Type</label>
     <select class="form-select shadow-none" formControlName="questionType">
-      <option value=0>Single Answer</option>
-      <option value=1>Multiple Choice</option>
+      <option selected [value]="singleAnswer">{{ singleAnswer }}</option>
+      <option [value]="multipleAnswer">{{ multipleAnswer }}</option>
     </select>
   </div>
 
   <div class="mb-3 mt-4">
-    <label for="question" class="col-form-label fw-bolder">Question&nbsp;<span class="text-danger">*</span></label>
-    <textarea class="form-control shadow-none" type="text" formControlName="question"
-              [class.invalid]="QuestionType.invalid && QuestionType.dirty" rows="7" style="resize: none" ></textarea>
+    <label for="questionText" class="col-form-label fw-bolder">Question&nbsp;<span class="text-danger">*</span></label>
+    <textarea class="form-control shadow-none" type="text" formControlName="questionText"
+              [class.invalid]="Question.invalid && Question.dirty" rows="7" style="resize: none" ></textarea>
   </div>
 
   <div class="mb-3 mt-4">
-    <label for="category" class="form-label">Category</label>
+    <label for="category" class="form-label">Category (Default Uncategorised)</label>
     <input [class.invalid]="Category.invalid && Category.dirty" class="form-control shadow-none"
-           list="categories" id="categories" placeholder="Type to search...">
+           list="categories" id="categories" placeholder="Type to search..." formControlName="category">
     <datalist [class.invalid]="Category.invalid && Category.dirty" id="categoriesDatalist" *ngFor="let category of categories">
       <option [value]="[category.name]">
     </datalist>
   </div>
 
-  <fieldset>
-    <div class="row">
-      <div class="col-md-1">
-          <label for="tag" class="col-form-label fw-bolder me-3">Tag</label>
-          <input class="form-control shadow-none" type="text" formControlName="tag"
-                 [class.invalid]="Tag.invalid && Tag.dirty" />
-      </div>
+  <fieldset formArrayName="answers" *ngFor="let answerField of Answers.controls; let answerIndex = index">
+    <div [formGroupName]="answerIndex">
+      <div class="row">
+        <div class="col-md-1">
+            <label for="tag" class="col-form-label fw-bolder me-3">Tag</label>
+            <input class="form-control shadow-none" type="text" formControlName="tag"
+                   [class.invalid]="answerField.get('tag').invalid && answerField.get('tag').dirty" />
+          <small class="text-danger" *ngIf="answerField.get('tag').errors?.['pattern']">Tag must be all <strong>UPPERCASE</strong> and have <strong>1</strong> letter</small>
+        </div>
 
-      <div class="col-md-1">
-          <label for="score" class="col-form-label fw-bolder me-3">Score</label>
-          <input class="form-control shadow-none" type="text" formControlName="score"
-                 [class.invalid]="Score.invalid && Score.dirty" />
-      </div>
+        <div class="col-md-1">
+            <label for="score" class="col-form-label fw-bolder me-3">Score</label>
+            <input class="form-control shadow-none" type="number" min="0" minlength="1" maxlength="3" placeholder="5" formControlName="score"
+                   [class.invalid]="answerField.get('score').invalid && answerField.get('score').dirty" />
+        </div>
 
-      <div class="col-md-1 mt-2">
-        <label for="isCorrect" class="col-form-check-label fw-bolder me-3">Correct?</label>
-        <input class="form-check-input shadow-none" style="cursor: pointer;" [type]="QuestionType.value === 0 ? 'radio' : 'checkbox'" formControlName="isCorrect"
-               [class.invalid]="IsCorrect.invalid && IsCorrect.dirty" />
-      </div>
+        <div class="col-md-1 mt-2">
+          <label for="isCorrect" class="col-form-check-label fw-bolder me-3">Correct?</label>
 
-      <div class="col-md-9">
-          <label for="answerText" class="col-form-label fw-bolder">Option&nbsp;<span class="text-danger">*</span></label>
-          <textarea class="form-control shadow-none" type="text" formControlName="answerText"
-                    [class.invalid]="AnswerText.invalid && AnswerText.dirty" rows="7" style="resize: none" ></textarea>
+          <ng-container [ngSwitch]="QuestionType.value">
+            <ng-container *ngSwitchCase="singleAnswer">
+              <input class="form-check-input shadow-none" style="cursor: pointer;" type="radio" name="isCorrect" formControlName="isCorrect"/>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="multipleAnswer">
+              <input class="form-check-input shadow-none" style="cursor: pointer;" type="checkbox" formControlName="isCorrect" />
+            </ng-container>
+          </ng-container>
+        </div>
+
+        <div class="col-md-8">
+            <label for="answerText" class="col-form-label fw-bolder">Option&nbsp;<span class="text-danger">*</span></label>
+            <textarea class="form-control shadow-none" type="text" formControlName="answerText"
+                      [class.invalid]="answerField.get('answerText').invalid && answerField.get('answerText').dirty" rows="7" style="resize: none" ></textarea>
+        </div>
+
+        <div class="col my-4 d-flex justify-content-end align-items-start">
+          <button [disabled]="Answers.length < 3" class="btn btn-danger alert-danger" (click)="removeOption(answerIndex)">
+            <i class="bi bi-x-lg"></i>
+          </button>
+        </div>
       </div>
     </div>
+
+    <hr>
   </fieldset>
 
+  <button class="btn btn-primary float-end mt-3" (click)="addOption()">Add Option</button>
 </form>

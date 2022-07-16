@@ -1,5 +1,8 @@
-<div class="jumbotron display-5 mb-3">Quizzes</div>
-<hr>
+
+<div *ngIf="quizzes.length > 0; else noQuizzes">
+  <div class="jumbotron display-5 mb-3">Quizzes</div>
+  <hr>
+
   <div class="d-flex justify-content-between" *ngFor="let quiz of quizzes; let quizNumber = index">
     <div>
       <a [routerLink]=[quiz.slug] routerLinkActive="router-link-active"
@@ -7,14 +10,31 @@
     </div>
 
     <div>
-      <a [routerLink]="['manage/', quiz.slug]" routerLinkActive="router-link-active" class="btn text-primary shadow-none">
+      <a title="Add Questions" [routerLink]="['manage/', quiz.slug]" routerLinkActive="router-link-active" class="btn text-success shadow-none fs-5">
+        <i class="bi bi-plus-lg"></i>
+      </a>
+
+      <div class="vr"></div>
+
+      <a title="Edit Quiz" [routerLink]="['']" routerLinkActive="router-link-active" class="btn text-primary shadow-none fs-5">
         <i class="bi bi-pencil"></i>
       </a>
+
       <div class="vr"></div>
-      <a class="btn text-danger shadow-none">
+
+      <a title="Delete Quiz" (click)="deleteQuiz(quizNumber)" class="btn text-danger shadow-none fs-5">
         <i class="bi bi-trash"></i>
       </a>
     </div>
   </div>
+</div>
 
+<ng-template #noQuizzes>
+  <div class="alert alert-secondary display-5" role="alert">
+    <div class="alert-heading h1">No Available Quizzes!</div>
+    <hr>
+
+    <p class="fs-4 mb-0">Click <a [routerLink]="['/add-quiz']">here</a> to add a new quiz.</p>
+  </div>
+</ng-template>
 

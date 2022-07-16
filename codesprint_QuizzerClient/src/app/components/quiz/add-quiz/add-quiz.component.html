@@ -31,11 +31,11 @@
     </div>
 
     <div class="col-md-6 mb-3 mt-4">
-      <label for="showCorrectAnswers" class="col-form-label fw-bolder">Show Correct Answers</label>
-      <select class="form-select shadow-none" formControlName="showCorrectAnswers">
-        <option selected value="0">{{ neverShowAnswer }}</option>
-        <option value="1">{{ endShowAnswer }}</option>
-        <option value="2">{{ alwaysShowAnswer }}</option>
+      <label for="showCorrectAnswer" class="col-form-label fw-bolder">Show Correct Answers</label>
+      <select class="form-select shadow-none" formControlName="showCorrectAnswer">
+        <option selected [value]="neverShowAnswer">{{ neverShowAnswer }}</option>
+        <option [value]="endShowAnswer">{{ endShowAnswer }}</option>
+        <option [value]="alwaysShowAnswer">{{ alwaysShowAnswer }}</option>
       </select>
     </div>
   </div>
@@ -60,5 +60,5 @@
 
 
   <button class="btn btn-primary" type="submit" [disabled]="addQuizForm.invalid">Save</button>
-  <button class="btn btn-light border ms-2" type="button" (click)="resetForm(addQuizForm)">Cancel</button>
+  <button class="btn btn-light border ms-2" type="button" (click)="resetAddForm()">Cancel</button>
 </form>

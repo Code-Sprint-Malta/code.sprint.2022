@@ -1,1 +1,21 @@
-<p>start-quiz works!</p>
+<ng-container [ngSwitch]="play">
+  <ng-container *ngSwitchCase="false">
+    <div class="alert alert-secondary display-5 border-dark" role="alert">
+      <div class="alert-heading h1">Start Quiz</div>
+      <hr>
+
+      <button class="btn btn-primary" (click)="startQuiz()">Play</button>
+      <button [routerLink]="['/quizzes']" routerLinkActive="router-link-active" class="btn btn-light ms-2">Go back</button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngSwitchCase="true">
+    <app-question-quiz
+      [quiz]="quiz"
+      [categories]="categories"
+      [questions]="questions" >
+    </app-question-quiz>
+  </ng-container>
+</ng-container>
+
+

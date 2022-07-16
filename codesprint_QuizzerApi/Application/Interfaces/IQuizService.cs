@@ -8,17 +8,14 @@ namespace Application.Interfaces
     {
         public Task<bool> AddQuiz(QuizViewModel quiz);
         
-        public Task<bool> AddQuestionsToQuiz(string slug, Dictionary<QuestionViewModel, AnswerViewModel> questions);
+        public Task<bool> AddQuestionToQuiz(string slug, QuestionViewModel question);
 
         public Task<QuizViewModel> GetQuiz(string slug);
 
-        public Task<QuestionViewModel> GetQuestion(int questionId);
-
         public List<QuestionViewModel> GetQuestionsForQuiz(string slug);
-
-        public List<AnswerViewModel> GetAnswersForQuestion(int questionId);
-
+        
         public List<CategoryViewModel> GetCategories();
         public List<QuizViewModel> GetQuizzes();
+        public Task<bool> DeleteQuiz(string slug);
     }
 }

@@ -7,12 +7,13 @@ import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AddQuizComponent } from './components/quiz/add-quiz/add-quiz.component';
 import { ViewQuizComponent } from './components/quiz/view-quiz/view-quiz.component';
-import { AboutComponent } from './components/about/about.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {AuthenticationService} from "./services/auth/authentication.service";
 import { ManageQuizComponent } from './components/quiz/manage-quiz/manage-quiz.component';
 import { StartQuizComponent } from './components/quiz/start-quiz/start-quiz.component';
+import { QuestionQuizComponent } from './components/quiz/question-quiz/question-quiz.component';
+import {QuizApiService} from "./services/quiz/quiz-api.service";
 
 @NgModule({
   declarations: [
@@ -21,9 +22,9 @@ import { StartQuizComponent } from './components/quiz/start-quiz/start-quiz.comp
     HeaderComponent,
     AddQuizComponent,
     ViewQuizComponent,
-    AboutComponent,
     ManageQuizComponent,
     StartQuizComponent,
+    QuestionQuizComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +34,8 @@ import { StartQuizComponent } from './components/quiz/start-quiz/start-quiz.comp
     HttpClientModule,
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    QuizApiService
   ],
   bootstrap: [AppComponent]
 })

@@ -4,6 +4,11 @@
   background-color: #1d58af !important;
 }
 
+.btn-primary {
+  background-color: #1d58af !important;
+  border-color: #1f60c5 !important;;
+}
+
 .text-primary {
   color: #1d58af !important;
 }

@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'quizzes/:slug',  component: StartQuizComponent },
   { path: 'quizzes/manage/:slug',  component: ManageQuizComponent },
   { path: 'quizzes/:slug/:questionId',  component: StartQuizComponent },
+  { path: '', redirectTo: 'quizzes', pathMatch: 'full' }
 ];
 
 @NgModule({
